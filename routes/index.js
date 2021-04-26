@@ -81,10 +81,11 @@ router.get("/search", (req, res, next) => {
 router.put("/editbook/:id", (req, res, next) => {
   const authHeader = req.headers["authorization"];
   if (!authHeader) return res.sendStatus(401);
-
-  if (!id) return res.status(402).json({ message: "Please enter an id" });
-
+  
   const bookid = req.params.id;
+  if (!bookid) return res.status(402).json({ message: "Please enter an id" });
+
+  
   //const query =
   const data = req.body;
   console.log(taskid);
